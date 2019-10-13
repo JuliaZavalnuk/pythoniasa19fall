@@ -68,11 +68,36 @@ This assignment is similar to 1-A except that the poem is in Russian now.
 В доме, который построил Джек.
 <BLANKLINE>
 """
+def poem():    #" the "
+	poem_lines_rus = [["Вот дом, который построил Джек", "\nВ доме, который построил Джек"],
+					  ["А это пшеница", "\nКоторая в тёмном чулане хранится"],
+					  ["А это весёлая птица-синица", "\nКоторая часто ворует пшеницу"],
+					  ["Вот кот", "\nКоторый пугает и ловит синицу"],
+					  ["Вот пёс без хвоста", "\nКоторый за шиворот треплет кота"],        
+					  ["А это корова безрогая", "\nЛягнувшую старого пса без хвоста"],        
+					  ["А это старушка, седая и строгая", "\nКоторая доит корову безрогую"],
+					  ["А это ленивый и толстый пастух", "\nКоторый бранится с коровницей строгою"],
+					  ["Вот два петуха", "\nКоторые будят того пастуха"]]
 
-def poem():
-    return ''
+
+	for i in range(len(poem_lines_rus)):
+		if i==0:
+			print(poem_lines_rus[0][0]+ ".\n")
+		else:
+			for j in range(i, -1, -1):
+				if j == i:
+					print(poem_lines_rus[j][0] + ",", end = "")
+				if (j==0):
+					print(poem_lines_rus[j][1] + ".\n")
+				elif (j==1):
+					print(poem_lines_rus[j][1], end = "")
+				else:
+					print(poem_lines_rus[j][1]+",", end = "")
+				
+	return ()
 
 
 if __name__ == '__main__':
     import doctest
     doctest.testmod()
+    poem()
