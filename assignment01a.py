@@ -85,10 +85,35 @@ That lay in the house that Jack built.
 <BLANKLINE>
 """
 
-def poem():
-    return ''
+def poem():    
+	poem_lines = [["lay in", "house that Jack built"],
+				  ["ate","malt"],
+				  ["killed", "rat"],
+				  ["worried","cat"],
+				  ["tossed", "dog"],
+				  ["milked", "cow with the crumpled horn"],
+				  ["kissed", "maiden all forlorn"],
+				  ["married", "man all tattered and torn"],
+				  ["waked", "priest all shaven and shorn"],
+				  ["kept", "cock that crowed in the morn"],
+				  ["is", "farmer sowing his corn"]]
+
+	for i in range(len(poem_lines)):
+	    for j in range(i, -1, -1):
+	        if j == i:
+	            print("This is the " + poem_lines[j][1], end = "")
+	        else:
+	            print("That " + poem_lines[j][0] + " the " + poem_lines[j][1], end ="")
+	        if (j==0):
+	        	print(". \n")
+	        elif(j==1):
+	        	print("")
+	        else:
+	        	print(",")
+	print()
 
 
 if __name__ == '__main__':
     import doctest
     doctest.testmod()
+    poem()
